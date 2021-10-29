@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
+using System.IO;
+using System.Reflection;
+using System.Security.Permissions;
 
 namespace Chess
 {
@@ -40,9 +44,11 @@ namespace Chess
                         Size = new Size(tileSize, tileSize),
                         Location = new Point(tileSize * n, tileSize * m)
                     };
-
+                    
                     // add to Form's Controls so that they show up
                     Controls.Add(newPanel);
+
+                   
 
                     // add to our 2d array of panels for future use
                     _chessBoardPanels[n, m] = newPanel;
@@ -54,6 +60,11 @@ namespace Chess
                         newPanel.BackColor = m % 2 != 0 ? clr2 : clr1;
                 }
             }
+            //usamos las piezas blancas pq tienen contorno negro y se ven
+
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_King.png");
+            _chessBoardPanels[4,3].BackgroundImage = Image.FromFile(path);
+            _chessBoardPanels[4, 3].BackgroundImageLayout = ImageLayout.Stretch;
         }
       
     }
