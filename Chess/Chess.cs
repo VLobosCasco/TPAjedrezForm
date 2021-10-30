@@ -17,11 +17,12 @@ namespace Chess
     public partial class Chess : Form
     {
         private Form origen;
-        private static Panel[,] _chessBoardPanels;
+        private static Panel[,] _chessBoardPanels = new Panel[N,N];
         public const int tileSize = 40;
         public const int N = 8;
         public static int tableros;
         static string path;
+
         //MO
         public static bool proximoTablero = false;
         public static bool fatales = false;
@@ -37,14 +38,12 @@ namespace Chess
             tableros = cantTableros;
             origen = menu;
         }
-        
         private void Chess_Load(object sender, EventArgs e)
         {
             //------------------------Tablero casillas leves-----------------------
             var clr1 = Color.Black;
             var clr2 = Color.White;
             // initialize the "chess board"
-            _chessBoardPanels = new Panel[N, N];
 
             // double for loop to handle all rows and columns
             for (var n = 0; n < N; n++)
@@ -72,11 +71,11 @@ namespace Chess
                 }
             }
             //usamos las piezas blancas pq tienen contorno negro y se ven
-            path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Rook.png");
-            _chessBoardPanels[0,0].BackgroundImage = Image.FromFile(path);
-            _chessBoardPanels[0, 0].BackgroundImageLayout = ImageLayout.Stretch;
-            _chessBoardPanels[7, 7].BackgroundImage = Image.FromFile(path);
-            _chessBoardPanels[7, 7].BackgroundImageLayout = ImageLayout.Stretch;     
+            //path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Rook.png");
+            //_chessBoardPanels[0,0].BackgroundImage = Image.FromFile(path);
+            //_chessBoardPanels[0, 0].BackgroundImageLayout = ImageLayout.Stretch;
+            //_chessBoardPanels[7, 7].BackgroundImage = Image.FromFile(path);
+            //_chessBoardPanels[7, 7].BackgroundImageLayout = ImageLayout.Stretch;     
         }
         
 
@@ -120,7 +119,6 @@ namespace Chess
             _chessBoardPanels[7, 7].BackgroundImage = Image.FromFile(path);
             _chessBoardPanels[7, 7].BackgroundImageLayout = ImageLayout.Stretch;*/
         }
-
         private void btn_generar_Click(object sender, EventArgs e)
         {
             // ----------------------------------------TABLEROS Y VARIABLES -----------------------------------------------
@@ -930,7 +928,8 @@ namespace Chess
                 }
                 Console.WriteLine();
                 Console.WriteLine();
-            }
+  
+        }
             public static void CopiarTablero(int[,] tableroFuente, int[,] tableroDestino)
             {
                 tableroDestino = (int[,])tableroFuente.Clone();
@@ -965,7 +964,6 @@ namespace Chess
                     Tableros[pos, k] = PosicionesPiezas[k];
                 }
             }
-
         private void btn_proximoTablero_Click(object sender, EventArgs e)
         {
             proximoTablero = true;

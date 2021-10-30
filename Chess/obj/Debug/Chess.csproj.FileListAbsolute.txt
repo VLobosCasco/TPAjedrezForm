@@ -22,3 +22,15 @@ C:\Users\Admin\Source\Repos\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.GenerateR
 C:\Users\Admin\Source\Repos\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Source\Repos\TPAjedrezForm\Chess\obj\Debug\Chess.exe
 C:\Users\Admin\Source\Repos\TPAjedrezForm\Chess\obj\Debug\Chess.pdb
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\bin\Debug\Chess.exe.config
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\bin\Debug\Chess.exe
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\bin\Debug\Chess.pdb
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.csprojAssemblyReference.cache
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.Chess.resources
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.Configuracion.resources
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.MainMenuChess.resources
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.Properties.Resources.resources
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.GenerateResource.cache
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.exe
+C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.pdb
