@@ -13,6 +13,7 @@ namespace Chess
     public partial class Configuracion : Form
     {
         Form menu;
+        
         public Configuracion(Form menu_)
         {
             InitializeComponent();
@@ -23,6 +24,11 @@ namespace Chess
         {
             menu.Show();
             this.Close();
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

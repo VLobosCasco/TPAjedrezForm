@@ -12,6 +12,7 @@ namespace Chess
 {
     public partial class MainMenuChess : Form
     {
+        static int cantidad  = 10;
         public MainMenuChess()
         {
             InitializeComponent();
@@ -34,9 +35,14 @@ namespace Chess
         }
         private void startbtn_Click(object sender, EventArgs e)
         {
-           Chess chess = new Chess();
+           Chess chess = new Chess(cantidad, this);
             chess.Show();
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cantidad = comboBox1.SelectedIndex + 1;
         }
     }
 }

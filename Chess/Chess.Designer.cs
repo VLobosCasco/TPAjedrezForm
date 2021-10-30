@@ -32,6 +32,7 @@ namespace Chess
             this.label1 = new System.Windows.Forms.Label();
             this.btn_fatales = new System.Windows.Forms.Button();
             this.btn_proximoTablero = new System.Windows.Forms.Button();
+            this.btn_generar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -65,12 +66,24 @@ namespace Chess
             this.btn_proximoTablero.TabIndex = 2;
             this.btn_proximoTablero.Text = "Proximo Tablero";
             this.btn_proximoTablero.UseVisualStyleBackColor = true;
+            this.btn_proximoTablero.Click += new System.EventHandler(this.btn_proximoTablero_Click);
+            // 
+            // btn_generar
+            // 
+            this.btn_generar.Location = new System.Drawing.Point(277, 19);
+            this.btn_generar.Name = "btn_generar";
+            this.btn_generar.Size = new System.Drawing.Size(161, 37);
+            this.btn_generar.TabIndex = 3;
+            this.btn_generar.Text = "Generar Tableros";
+            this.btn_generar.UseVisualStyleBackColor = true;
+            this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
             // 
             // Chess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.btn_proximoTablero);
             this.Controls.Add(this.btn_fatales);
             this.Controls.Add(this.label1);
@@ -88,5 +101,6 @@ namespace Chess
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_fatales;
         private System.Windows.Forms.Button btn_proximoTablero;
+        private System.Windows.Forms.Button btn_generar;
     }
 }
