@@ -29,6 +29,7 @@ namespace Chess
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion));
             this.tituloConfiguracion = new System.Windows.Forms.Label();
             this.volverMainMenubtn = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@ namespace Chess
             this.tituloConfiguracion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tituloConfiguracion.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloConfiguracion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tituloConfiguracion.Location = new System.Drawing.Point(41, 64);
+            this.tituloConfiguracion.Location = new System.Drawing.Point(51, 40);
             this.tituloConfiguracion.Name = "tituloConfiguracion";
             this.tituloConfiguracion.Size = new System.Drawing.Size(501, 29);
             this.tituloConfiguracion.TabIndex = 0;
@@ -51,9 +52,9 @@ namespace Chess
             // 
             this.volverMainMenubtn.BackColor = System.Drawing.Color.Transparent;
             this.volverMainMenubtn.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volverMainMenubtn.Location = new System.Drawing.Point(75, 163);
+            this.volverMainMenubtn.Location = new System.Drawing.Point(100, 104);
             this.volverMainMenubtn.Name = "volverMainMenubtn";
-            this.volverMainMenubtn.Size = new System.Drawing.Size(153, 71);
+            this.volverMainMenubtn.Size = new System.Drawing.Size(145, 40);
             this.volverMainMenubtn.TabIndex = 1;
             this.volverMainMenubtn.Text = "Volver al menu";
             this.volverMainMenubtn.UseVisualStyleBackColor = false;
@@ -61,11 +62,14 @@ namespace Chess
             // 
             // btn_salir
             // 
+            this.btn_salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_salir.BackgroundImage")));
+            this.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_salir.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
-            this.btn_salir.Location = new System.Drawing.Point(346, 163);
+            this.btn_salir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_salir.Location = new System.Drawing.Point(352, 103);
             this.btn_salir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(165, 71);
+            this.btn_salir.Size = new System.Drawing.Size(145, 43);
             this.btn_salir.TabIndex = 2;
             this.btn_salir.Text = "Exit";
             this.btn_salir.UseVisualStyleBackColor = true;
@@ -76,6 +80,7 @@ namespace Chess
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InfoText;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(591, 325);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.volverMainMenubtn);

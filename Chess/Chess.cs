@@ -66,12 +66,12 @@ namespace Chess
                     var newPanel = new Panel
                     {
                         Size = new Size(tileSize, tileSize),
-                        Location = new Point(tileSize * n + 50, tileSize * m + 50)
+                        Location = new Point(tileSize * n + 50, tileSize * m + 80)
                     };
                     var newPanel2 = new Panel
                     {
                         Size = new Size(tileSize, tileSize),
-                        Location = new Point(tileSize * n + 450, tileSize * m + 50)
+                        Location = new Point(tileSize * n + 500, tileSize * m + 80)
                     };
 
                     // add to Form's Controls so that they show up

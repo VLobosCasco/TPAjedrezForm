@@ -86,12 +86,14 @@ namespace Chess
             // 
             // btn_exit
             // 
+            this.btn_exit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_exit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.Location = new System.Drawing.Point(649, 422);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(97, 33);
             this.btn_exit.TabIndex = 3;
             this.btn_exit.Text = "EXIT";
-            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // MainMenuChess
