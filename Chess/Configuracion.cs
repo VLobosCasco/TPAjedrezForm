@@ -30,5 +30,10 @@ namespace Chess
         {
             Application.Exit();
         }
+
+        private void Configuracion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
