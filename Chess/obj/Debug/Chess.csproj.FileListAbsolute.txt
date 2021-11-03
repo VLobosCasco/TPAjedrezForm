@@ -34,3 +34,15 @@ C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.Generate
 C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
 C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.exe
 C:\Users\PC\Documents\GitHub\TPAjedrezForm\Chess\obj\Debug\Chess.pdb
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\bin\Debug\Chess.exe.config
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\bin\Debug\Chess.exe
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\bin\Debug\Chess.pdb
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.csproj.AssemblyReference.cache
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.Chess.resources
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.Configuracion.resources
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.MainMenuChess.resources
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.Properties.Resources.resources
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.csproj.GenerateResource.cache
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.exe
+F:\Facultad 2021\Segundo Cuatrimestre\Labo Programacion II\TpAjedrezForm\Chess\obj\Debug\Chess.pdb

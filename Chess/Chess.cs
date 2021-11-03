@@ -16,21 +16,20 @@ namespace Chess
 {
     public partial class Chess : Form
     {
-        private Form origen;
-        private static Panel[,] _chessBoardPanels = new Panel[N, N];
-        private static Panel[,] _chessBoardPanelsFatal = new Panel[N, N];
+
+        //VARIABLES
+        private Form origen; //form para linkear el form actual con el menu principal
+        private static Panel[,] _chessBoardPanels = new Panel[N, N]; //tablero donde se mostraran las piezas
+        private static Panel[,] _chessBoardPanelsFatal = new Panel[N, N]; //tablero donde se filtraran las posiciones fatales
         public const int tileSize = 40;
         public const int N = 8;
         public static int tableros;
         public static int ContTableros;
-        static string path;
-        int[,] TableroAux;
+        static string path; //direccion donde se guardan las imagenes que usamos
+        int[,] TableroAux; //este tablero sera el que use el programa, no el que se imprime
         int[] arrayPiezas;
         int[,] PosPiezas;
 
-       
-        public static bool proximoTablero = false;
-        public static bool fatales = false;
         public enum Piezas
         {
             //El 0: Casilla Vacia
@@ -54,35 +53,31 @@ namespace Chess
             var clr1 = Color.Black;
             var clr2 = Color.White;
 
-            // initialize the "chess board"
-
-            // double for loop to handle all rows and columns
             for (var n = 0; n < N; n++)
             {
                 for (var m = 0; m < N; m++)
                 {
-                    // create new Panel control which will be one 
-                    // chess board tile
+                    //Vamos creando cada "casilla" del panel principal
                     var newPanel = new Panel
                     {
                         Size = new Size(tileSize, tileSize),
                         Location = new Point(tileSize * n + 50, tileSize * m + 80)
                     };
+                    //Vamos creando cada "casilla" del panel de fatales
                     var newPanel2 = new Panel
                     {
                         Size = new Size(tileSize, tileSize),
                         Location = new Point(tileSize * n + 500, tileSize * m + 80)
                     };
 
-                    // add to Form's Controls so that they show up
+                   //Vamos agregando los paneles que creamos
                     Controls.Add(newPanel);
                     Controls.Add(newPanel2);
 
-                    // add to our 2d array of panels for future use
                     _chessBoardPanels[n, m] = newPanel;
                     _chessBoardPanelsFatal[n, m] = newPanel2;
 
-                    // color the backgrounds
+                    //color del fondo de los paneles
                     if (n % 2 != 0)
                     {
                         newPanel.BackColor = m % 2 != 0 ? clr1 : clr2;
@@ -97,9 +92,9 @@ namespace Chess
                 }
             }
             //usamos las piezas blancas pq tienen contorno negro y se ven
-            if (ContTableros == 0)
-                btn_fatales.Enabled = false;
 
+            if (ContTableros == 0) //nos aseguramos que el usuario no pueda filtrar si todavia no se encontro ningun tablero
+                btn_fatales.Enabled = false;
 
         }
         //Botones
@@ -114,7 +109,7 @@ namespace Chess
         private void btn_generar_Click(object sender, EventArgs e)
         {
 
-            if (ContTableros == tableros)
+            if (ContTableros == tableros) //si ya encontramos todos los tableros pedidos por el usuario, mostramos la pantalla final
             {
                 Configuracion salida = new Configuracion(origen);
                 salida.Show();
@@ -136,7 +131,7 @@ namespace Chess
                 int[] PosPiezaParcial = new int[2];
                 int[] PosPiezaParcialAux = new int[2];
                 PosPiezas = new int[8, 2];
-                int[,] OrdenesTableros = new int[tableros, N];  //T: Tableros  //P: PosicionesRand
+                int[,] OrdenesTableros = new int[tableros, N]; //aca se guardaran los tableros ya encontrados
 
                 //TORRES, sus posiciones seran fijas
                 int[] PosTorre1 = new int[2];
@@ -154,7 +149,7 @@ namespace Chess
                 {
                     Limpiar_Tablero();
                     //Ponemos las torres fijas
-                    path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Rook.png");
+                    path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Rook.png"); //imprimimos las torres en el tablero al empezar a buscar una solucion
                     _chessBoardPanels[0, 0].BackgroundImage = Image.FromFile(path);
                     _chessBoardPanels[0, 0].BackgroundImageLayout = ImageLayout.Stretch;
                     _chessBoardPanels[7, 7].BackgroundImage = Image.FromFile(path);
@@ -171,39 +166,38 @@ namespace Chess
                     int fila = rnd.Next(3, 5);
                     int columna = rnd.Next(3, 5);
                     casillasAtacadas += atacarCasillas(fila, columna, Piezas.Ra, TableroAux); //agregamos la cantidad de casillas que ataca la reina segun su posicion
-                    SetPosicion(Chess.Piezas.Ra, fila, columna, TableroAux); //cuando implementemos el forms, esto queda determinado por el usuario
+                    SetPosicion(Chess.Piezas.Ra, fila, columna, TableroAux); 
                     PosReina[0] = fila;
                     PosReina[1] = columna;
-                    path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Queen.png");
+
+                    path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_Queen.png"); //agregamos la reina a los forms
                     _chessBoardPanels[PosReina[0], PosReina[1]].BackgroundImage = Image.FromFile(path);
                     _chessBoardPanels[PosReina[0], PosReina[1]].BackgroundImageLayout = ImageLayout.Stretch;
                     _chessBoardPanelsFatal[PosReina[0], PosReina[1]].BackgroundImage = Image.FromFile(path);
                     _chessBoardPanelsFatal[PosReina[0], PosReina[1]].BackgroundImageLayout = ImageLayout.Stretch;
 
-                    arrayPiezasAux = OrdenAleatorio(arrayPiezasAux);
+                    arrayPiezasAux = OrdenAleatorio(arrayPiezasAux); 
                     arrayPiezasAux.CopyTo(arrayPiezas, 0);
-
-                    //Triple for, complejidad n^3 -> Primer FOR para las piezas y los otros dos para recorrer el tablero con varios métodos de poda. 
+                   
                     for (int i = 0; i < 5; i++)//FOR para las 5 piezas
                     {
                         CasillasMax = 0; //la cantidad de casillas que ataca cada pieza en su posicion "optima"
                         int aux = 1;
-                        for (int j = 0; j < N; j++)
+                        for (int j = 0; j < N; j++) //for para las filas
                         {
                             auxK = 0; //esto determinara segun el color del alfil y de la casilla donde este, la posicion inicial
                             if (arrayPiezas[i] == (int)Piezas.AB || arrayPiezas[i] == (int)Piezas.AN)//Pregunta si la pieza es un alfil
                             {
-                                aux = 2; //incrementamos el for de a 2 si las piezas son alfiles, respetando su color
+                                aux = 2; //incrementamos el for de a 2 si las piezas son alfiles, respetando su color, de esta forma solo recorre la mitad de las casillas
                                 if ((arrayPiezas[i] == (int)Piezas.AB && j % 2 == 0) || (arrayPiezas[i] == (int)Piezas.AN && j % 2 != 0))
                                     auxK = 1;
                             }
-                            for (int k = auxK; k < N; k = k + aux)
+                            for (int k = auxK; k < N; k = k + aux) //for para las columna
                             {
 
                                 if (ValidarPosicion(j, k, TableroAux, (Piezas)arrayPiezas[i])) //antes de empezar a buscar la posicion optima, verificamos que la actual sea valida (que no haya ota pieza)
-                                {
-                                    //aca deberiamos verificar que si la pieza es un alfil, que no este en la diagonal de la reina, pq sino las posiciones atacadas nunca serían las maximas
-                                    CasillasMaxAux = atacarCasillas(j, k, (Piezas)arrayPiezas[i], TableroAux);
+                                {                                  
+                                    CasillasMaxAux = atacarCasillas(j, k, (Piezas)arrayPiezas[i], TableroAux); //con esta funcion vamos calculando cuantas casillas ataca la pieza en esta posicion
                                     if (CasillasMaxAux >= CasillasMax) //si se encuentra una posicion donde se atacan mas casillas, la actualizamos
                                     {
                                         CasillasMax = CasillasMaxAux;
@@ -220,7 +214,7 @@ namespace Chess
                         pintarCasillas(PosPiezaParcial[0], PosPiezaParcial[1], (Piezas)arrayPiezas[i], TableroAux, 0, 1); //rellenamos el tablero con 1(casillas atacadas leves)
                     }
 
-                    //Si se encuentra un tablero             
+                               
                     arrayPiezas[5] = (int)Piezas.Ra;
                     arrayPiezas[6] = (int)Piezas.T1;
                     arrayPiezas[7] = (int)Piezas.T2;
@@ -230,10 +224,10 @@ namespace Chess
                     PosPiezas[6, 1] = PosTorre1[1];
                     PosPiezas[7, 0] = PosTorre2[0];
                     PosPiezas[7, 1] = PosTorre2[1];
-                    //me fijo que no este repetido
+                    //Si se encuentra un tablero  me fijo que no este repetido
                     if (!TableroRepetido(ConvertirPosicionANumero(PosPiezas, arrayPiezas), OrdenesTableros, ContTableros))
                     {
-                        if (casillasAtacadas == 64)
+                        if (casillasAtacadas == 64) // si efectivamente se atacan todas las casillas
                         {
                             GuardarPosicion(OrdenesTableros, ContTableros, ConvertirPosicionANumero(PosPiezas, arrayPiezas)); //guardamos el orden que usamos para encontrar el tablero
                             ContTableros++;
@@ -251,7 +245,6 @@ namespace Chess
             this.Close();
         }
 
-
         //----------------------------------------------------FUNCIONES------------------------------------------------------------------------
         public static void Limpiar_Tablero()
         {
@@ -259,7 +252,7 @@ namespace Chess
             {
                 for (int j = 0; j < N; j++)
                 {
-                    _chessBoardPanels[i, j].BackgroundImage = null;
+                    _chessBoardPanels[i, j].BackgroundImage = null; //vamos limpiando las imagenes de fondo de los paneles
                     _chessBoardPanelsFatal[i, j].BackgroundImage = null;
                 }
             }
@@ -267,7 +260,7 @@ namespace Chess
         public static void casillasFatales(int[] arrayPiezas, int[,] Posiciones, int[,] tablero)//las posiciones estan en el mismo orden que las piezas
         {
            
-            path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\cruz.png");
+            path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\cruz.png"); //le asignamos a path la imagen de la cruz
             for (int i = 0; i < N; i++)
             {
                 switch ((Piezas)arrayPiezas[i])
@@ -300,6 +293,7 @@ namespace Chess
         public static void fatalHorizontalVertical(int fila, int columna, int[,] tablero)
         {
             int j = 1;
+            //Mientras la posicion a la que queramos acceder este dentro del tablero y este atacada leve, vamos llenandola de forma horizontal y vertical con una X e imprimimos la imagen de una X
             if (DentroTablero(fila, columna + j))
             {
                 while (tablero[fila, columna + j] == 1 || tablero[fila, columna + j] == (int)Piezas.X)
@@ -357,6 +351,7 @@ namespace Chess
         public static void fatalDiagonal(int fila, int columna, int[,] tablero)
         {
             int k = 1;
+            //Mientras la posicion a la que queramos acceder este dentro del tablero y este atacada leve, vamos llenandola de forma diagonal con una X e imprimimos la imagen de una X
             if (DentroTablero(fila + k, columna + k)) //abajo a la derecha
             {
                 while (tablero[fila + k, columna + k] == 1 || tablero[fila + k, columna + k] == (int)Piezas.X)
@@ -418,7 +413,7 @@ namespace Chess
             switch (pieza)
             {
                 case Piezas.Ry:
-                    if (fila != 0 && fila != 7 && columna != 0 && columna != 7)
+                    if (fila != 0 && fila != 7 && columna != 0 && columna != 7) //si no esta en los bordes, no se va a salir fuera del tablero
                     {
                         if (tablero[fila + 1, columna - 1] == 0)
                             contadorCasillas++;
@@ -542,6 +537,7 @@ namespace Chess
 
                 case Piezas.C1:
                 case Piezas.C2:
+                    //contemplamos los movimientos del caballo y si estan dentro del tablero
                     if (DentroTablero(fila - 2, columna - 1))
                     {
                         if (tablero[fila - 2, columna - 1] == 0)
@@ -1051,6 +1047,7 @@ namespace Chess
         }
         public static int[] OrdenAleatorio(int[] Piezas)
         {
+            //creamos un orden aleatorio para el posicionamiento de las piezas
             Random rand = new Random();
 
             for (int i = 0; i < Piezas.Length - 1; i++)
@@ -1144,6 +1141,7 @@ namespace Chess
         }
         public static void ImprimirTablero(int[,] tablero)
         {
+            //esta funcion la usamos antes de crear el form para ir viendo lo que contenia el tablero del programa
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
@@ -1165,10 +1163,11 @@ namespace Chess
         }
         public static int[] ConvertirPosicionANumero(int[,] Posicion, int[] tiposDePieza)
         {
+            //Segun la posicion de cada pieza, creamos un numero de 3 cifras unico para esa posicion, que depende de la fila, columna, y tipo de pieza
             int[] aux = new int[N];
             for (int i = 0; i < N; i++)
             {
-                if (tiposDePieza[i] == (int)Piezas.C2)
+                if (tiposDePieza[i] == (int)Piezas.C2) //de esta forma los dos caballos representan el mismo tipo de pieza
                     tiposDePieza[i] = tiposDePieza[i] - 1;
                 aux[i] = (tiposDePieza[i] * 100 + Posicion[i, 1] * 10 + Posicion[i, 0]);
             }
@@ -1182,10 +1181,10 @@ namespace Chess
                 contador = 0;
                 for (int j = 0; j < N; j++)
                 {
-                    if (OrdenesHechos[i, j] == ordenComprobar[j])
-                        contador++;
+                    if (OrdenesHechos[i, j] == ordenComprobar[j])//usando los numeros unicos creado en la funcion anterior, vamos comprobando si se repiten
+                        contador++;                       
                 }
-                if (contador == N)
+                if (contador == N) //si el contador llega a N, es decir que se repitieron N numeros, el tablero sera el mismo
                     return true;
             }
             return false;

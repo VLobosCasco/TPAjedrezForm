@@ -12,7 +12,7 @@ namespace Chess
 {
     public partial class MainMenuChess : Form
     {
-        static int cantidad = 10;
+        static int cantidad = 10; //parametros por default que recibe el form principal chess
         static int inicio = 0;
         public MainMenuChess()
         {
@@ -43,7 +43,7 @@ namespace Chess
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cantidad = comboBox1.SelectedIndex + 1;
+            cantidad = comboBox1.SelectedIndex + 1; //Le asignamos al parametro la cantidad que selecciona el usuario
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
