@@ -35,9 +35,9 @@ namespace Chess
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_exit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,9 +87,16 @@ namespace Chess
             "12",
             "13",
             "14",
-            "15"});
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50"});
             this.comboBox1.Location = new System.Drawing.Point(29, 277);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(81, 21);
             this.comboBox1.TabIndex = 2;
@@ -123,18 +130,16 @@ namespace Chess
             this.panel1.Size = new System.Drawing.Size(143, 481);
             this.panel1.TabIndex = 4;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(15, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tableros a buscar";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(3, 456);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 14);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Valentina Lobos Casco\r\n";
             // 
             // label2
             // 
@@ -147,16 +152,18 @@ namespace Chess
             this.label2.TabIndex = 4;
             this.label2.Text = "Lucio Rodriguez Sapino\r\n";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(3, 456);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 14);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Valentina Lobos Casco\r\n";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(15, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 14);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tableros a buscar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainMenuChess
             // 

@@ -29,7 +29,7 @@ namespace Chess
         int[,] TableroAux; //este tablero sera el que use el programa, no el que se imprime
         int[] arrayPiezas;
         int[,] PosPiezas;
-        int[,] OrdenesTableros = new int[15, N]; //aca se guardaran los tableros ya encontrados
+        int[,] OrdenesTableros = new int[50, N]; //aca se guardaran los tableros ya encontrados
 
 
         public enum Piezas
