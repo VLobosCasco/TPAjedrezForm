@@ -29,6 +29,8 @@ namespace Chess
         int[,] TableroAux; //este tablero sera el que use el programa, no el que se imprime
         int[] arrayPiezas;
         int[,] PosPiezas;
+        int[,] OrdenesTableros = new int[15, N]; //aca se guardaran los tableros ya encontrados
+
 
         public enum Piezas
         {
@@ -44,7 +46,7 @@ namespace Chess
             InitializeComponent();
             tableros = cantTableros;
             origen = menu;
-            ContTableros = inicio;
+            ContTableros = inicio;           
         }
        
         private void Chess_Load(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace Chess
                 int[] PosPiezaParcial = new int[2];
                 int[] PosPiezaParcialAux = new int[2];
                 PosPiezas = new int[8, 2];
-                int[,] OrdenesTableros = new int[tableros, N]; //aca se guardaran los tableros ya encontrados
+                
 
                 //TORRES, sus posiciones seran fijas
                 int[] PosTorre1 = new int[2];
@@ -1179,13 +1181,17 @@ namespace Chess
             for (int i = 0; i < indice; i++)
             {
                 contador = 0;
-                for (int j = 0; j < N; j++)
-                {
-                    if (OrdenesHechos[i, j] == ordenComprobar[j])//usando los numeros unicos creado en la funcion anterior, vamos comprobando si se repiten
-                        contador++;                       
+                for (int j = 0; j < N ; j++)
+                {                  
+                    for (int k = 0; k < N; k++)
+                    {
+                        if (OrdenesHechos[i, k] == ordenComprobar[j])//usando los numeros unicos creado en la funcion anterior, vamos comprobando si se repiten
+                            contador++;
+                    }
+                    if (contador >= N) //si el contador llega a N, es decir que se repitieron N numeros, el tablero sera el mismo
+                        return true;
                 }
-                if (contador == N) //si el contador llega a N, es decir que se repitieron N numeros, el tablero sera el mismo
-                    return true;
+                
             }
             return false;
         }

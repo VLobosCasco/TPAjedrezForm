@@ -46,9 +46,10 @@ namespace Chess
             this.Titulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Titulo.Font = new System.Drawing.Font("Times New Roman", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Titulo.Location = new System.Drawing.Point(384, 9);
+            this.Titulo.Location = new System.Drawing.Point(576, 14);
+            this.Titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(288, 72);
+            this.Titulo.Size = new System.Drawing.Size(428, 104);
             this.Titulo.TabIndex = 0;
             this.Titulo.Text = "Problema del tablero \r\n         de Ajedrez";
             this.Titulo.Click += new System.EventHandler(this.Titulo_Click);
@@ -59,9 +60,10 @@ namespace Chess
             this.startbtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startbtn.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startbtn.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.startbtn.Location = new System.Drawing.Point(15, 191);
+            this.startbtn.Location = new System.Drawing.Point(22, 294);
+            this.startbtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.startbtn.Name = "startbtn";
-            this.startbtn.Size = new System.Drawing.Size(93, 31);
+            this.startbtn.Size = new System.Drawing.Size(140, 48);
             this.startbtn.TabIndex = 1;
             this.startbtn.Text = "START";
             this.startbtn.UseVisualStyleBackColor = false;
@@ -80,11 +82,15 @@ namespace Chess
             "7",
             "8",
             "9",
-            "10"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 277);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.comboBox1.Location = new System.Drawing.Point(32, 426);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(81, 21);
+            this.comboBox1.Size = new System.Drawing.Size(120, 28);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -95,9 +101,10 @@ namespace Chess
             this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_exit.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.Location = new System.Drawing.Point(649, 435);
+            this.btn_exit.Location = new System.Drawing.Point(974, 669);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(97, 33);
+            this.btn_exit.Size = new System.Drawing.Size(146, 51);
             this.btn_exit.TabIndex = 3;
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
@@ -109,9 +116,10 @@ namespace Chess
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.startbtn);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 0);
+            this.panel1.Location = new System.Drawing.Point(18, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 481);
+            this.panel1.Size = new System.Drawing.Size(179, 739);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -120,26 +128,28 @@ namespace Chess
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(7, 250);
+            this.label1.Location = new System.Drawing.Point(10, 385);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 14);
+            this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tableros a buscar";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // MainMenuChess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(758, 480);
+            this.ClientSize = new System.Drawing.Size(1137, 738);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.Titulo);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainMenuChess";
             this.Text = "MainMenuChess";
             this.Load += new System.EventHandler(this.MainMenuChess_Load);
