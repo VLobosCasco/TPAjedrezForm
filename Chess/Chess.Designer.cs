@@ -55,20 +55,23 @@ namespace Chess
             // 
             // btn_fatales
             // 
+            this.btn_fatales.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_fatales.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fatales.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_fatales.Location = new System.Drawing.Point(55, 427);
             this.btn_fatales.Margin = new System.Windows.Forms.Padding(2);
             this.btn_fatales.Name = "btn_fatales";
             this.btn_fatales.Size = new System.Drawing.Size(140, 52);
             this.btn_fatales.TabIndex = 1;
             this.btn_fatales.Text = "Filtrar casillas fatales";
-            this.btn_fatales.UseVisualStyleBackColor = true;
+            this.btn_fatales.UseVisualStyleBackColor = false;
             this.btn_fatales.Click += new System.EventHandler(this.btn_fatales_Click);
             // 
             // btn_generar
             // 
-            this.btn_generar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_generar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_generar.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_generar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_generar.Location = new System.Drawing.Point(227, 427);
             this.btn_generar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_generar.Name = "btn_generar";
@@ -80,13 +83,16 @@ namespace Chess
             // 
             // btn_menu
             // 
+            this.btn_menu.BackColor = System.Drawing.Color.Red;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_menu.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_menu.Location = new System.Drawing.Point(786, 504);
             this.btn_menu.Name = "btn_menu";
             this.btn_menu.Size = new System.Drawing.Size(75, 23);
             this.btn_menu.TabIndex = 4;
             this.btn_menu.Text = "MENU";
-            this.btn_menu.UseVisualStyleBackColor = true;
+            this.btn_menu.UseVisualStyleBackColor = false;
             this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // labelTablero
@@ -118,7 +124,7 @@ namespace Chess
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(601, 437);
+            this.label2.Location = new System.Drawing.Point(611, 437);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 25);
             this.label2.TabIndex = 7;
