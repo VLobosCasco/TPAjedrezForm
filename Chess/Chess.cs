@@ -133,8 +133,9 @@ namespace Chess
                 int[] PosPiezaParcial = new int[2];
                 int[] PosPiezaParcialAux = new int[2];
                 PosPiezas = new int[8, 2];
-                
-
+                int PosRey = 1, PosC1 = 2, PosC2 = 3;
+                int[] PosReyAux = new int[2];
+   
                 //TORRES, sus posiciones seran fijas
                 int[] PosTorre1 = new int[2];
                 PosTorre1[0] = 0; PosTorre1[1] = 0;
@@ -208,6 +209,20 @@ namespace Chess
                                 }
                             }
                         }
+                        if ((Piezas)arrayPiezas[i] == Piezas.Ry)
+                        {
+                            PosRey = PosPiezaParcial[0] * 10 + PosPiezaParcial[1];
+                            PosReyAux[0] = PosPiezaParcial[0];
+                            PosReyAux[1] = PosPiezaParcial[1];
+                        }
+                        if ((Piezas)arrayPiezas[i] == Piezas.C1)
+                        {
+                            PosC1 = PosPiezaParcial[0] * 10 + PosPiezaParcial[1];
+                        }
+                        if ((Piezas)arrayPiezas[i] == Piezas.C2)
+                        {
+                            PosC2 = PosPiezaParcial[0] * 10 + PosPiezaParcial[1];
+                        }
                         PosPiezas[i, 0] = PosPiezaParcial[0]; //ya esta seria la posicion optima
                         PosPiezas[i, 1] = PosPiezaParcial[1];
 
@@ -215,8 +230,7 @@ namespace Chess
                         casillasAtacadas += CasillasMax;
                         pintarCasillas(PosPiezaParcial[0], PosPiezaParcial[1], (Piezas)arrayPiezas[i], TableroAux, 0, 1); //rellenamos el tablero con 1(casillas atacadas leves)
                     }
-
-                               
+                  
                     arrayPiezas[5] = (int)Piezas.Ra;
                     arrayPiezas[6] = (int)Piezas.T1;
                     arrayPiezas[7] = (int)Piezas.T2;
@@ -233,6 +247,12 @@ namespace Chess
                         {
                             GuardarPosicion(OrdenesTableros, ContTableros, ConvertirPosicionANumero(PosPiezas, arrayPiezas)); //guardamos el orden que usamos para encontrar el tablero
                             ContTableros++;
+                            if(PosRey == PosC1 || PosRey == PosC2)
+                            {
+                                path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Assets\White_King_Green.png");
+                                _chessBoardPanels[PosReyAux[0], PosReyAux[1]].BackgroundImage = Image.FromFile(path);
+                                _chessBoardPanels[PosReyAux[0], PosReyAux[1]].BackgroundImageLayout = ImageLayout.Stretch;         
+                            }
                             if (ContTableros != 0)
                                 btn_fatales.Enabled = true;
                             break;

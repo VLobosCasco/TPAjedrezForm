@@ -38,7 +38,10 @@ namespace Chess
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,9 +50,10 @@ namespace Chess
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(131, 15);
+            this.label1.Location = new System.Drawing.Point(196, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 31);
+            this.label1.Size = new System.Drawing.Size(221, 47);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tablero n° ";
             // 
@@ -58,10 +62,9 @@ namespace Chess
             this.btn_fatales.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_fatales.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_fatales.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_fatales.Location = new System.Drawing.Point(55, 427);
-            this.btn_fatales.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_fatales.Location = new System.Drawing.Point(82, 657);
             this.btn_fatales.Name = "btn_fatales";
-            this.btn_fatales.Size = new System.Drawing.Size(140, 52);
+            this.btn_fatales.Size = new System.Drawing.Size(210, 80);
             this.btn_fatales.TabIndex = 1;
             this.btn_fatales.Text = "Filtrar casillas fatales";
             this.btn_fatales.UseVisualStyleBackColor = false;
@@ -72,10 +75,9 @@ namespace Chess
             this.btn_generar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_generar.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_generar.Location = new System.Drawing.Point(227, 427);
-            this.btn_generar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_generar.Location = new System.Drawing.Point(340, 657);
             this.btn_generar.Name = "btn_generar";
-            this.btn_generar.Size = new System.Drawing.Size(140, 52);
+            this.btn_generar.Size = new System.Drawing.Size(210, 80);
             this.btn_generar.TabIndex = 3;
             this.btn_generar.Text = "Próximo tablero";
             this.btn_generar.UseVisualStyleBackColor = false;
@@ -87,9 +89,10 @@ namespace Chess
             this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_menu.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_menu.Location = new System.Drawing.Point(786, 504);
+            this.btn_menu.Location = new System.Drawing.Point(1179, 775);
+            this.btn_menu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(75, 23);
+            this.btn_menu.Size = new System.Drawing.Size(112, 35);
             this.btn_menu.TabIndex = 4;
             this.btn_menu.Text = "MENU";
             this.btn_menu.UseVisualStyleBackColor = false;
@@ -101,9 +104,10 @@ namespace Chess
             this.labelTablero.BackColor = System.Drawing.Color.Transparent;
             this.labelTablero.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTablero.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTablero.Location = new System.Drawing.Point(272, 17);
+            this.labelTablero.Location = new System.Drawing.Point(408, 26);
+            this.labelTablero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTablero.Name = "labelTablero";
-            this.labelTablero.Size = new System.Drawing.Size(25, 29);
+            this.labelTablero.Size = new System.Drawing.Size(36, 41);
             this.labelTablero.TabIndex = 5;
             this.labelTablero.Text = "1";
             // 
@@ -111,9 +115,10 @@ namespace Chess
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(582, 440);
+            this.pictureBox1.Location = new System.Drawing.Point(874, 680);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 19);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 29);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -122,11 +127,12 @@ namespace Chess
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Georgia", 11.75F);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(611, 437);
+            this.label2.Location = new System.Drawing.Point(916, 680);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 25);
+            this.label2.Size = new System.Drawing.Size(141, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Ataque fatal";
             // 
@@ -136,19 +142,47 @@ namespace Chess
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(561, 15);
+            this.label3.Location = new System.Drawing.Point(842, 23);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 31);
+            this.label3.Size = new System.Drawing.Size(305, 47);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tablero filtrado";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Georgia", 11.75F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(916, 732);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(303, 29);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Rey combinado con caballo";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(874, 732);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 29);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
             // Chess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(873, 539);
+            this.ClientSize = new System.Drawing.Size(1310, 829);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -158,10 +192,12 @@ namespace Chess
             this.Controls.Add(this.btn_fatales);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Chess";
             this.Text = "Chess";
             this.Load += new System.EventHandler(this.Chess_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +213,7 @@ namespace Chess
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
