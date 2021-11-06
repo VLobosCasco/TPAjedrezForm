@@ -42,7 +42,7 @@ namespace Chess
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {          
             cantidad = comboBox1.SelectedIndex + 1; //Le asignamos al parametro la cantidad que selecciona el usuario
         }
 
